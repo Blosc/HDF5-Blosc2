@@ -157,7 +157,7 @@ herr_t blosc2_set_local(hid_t dcpl, hid_t type, hid_t space) {
   fprintf(stderr, "Blosc2: Computed buffer size %d\n", bufsize);
 #endif
 
-  if (1 < ndim && ndim <= BLOSC2_MAX_DIM) {
+  if (1 <= ndim && ndim <= BLOSC2_MAX_DIM) {
     if (nelements < 5) { values[4] = DEFAULT_CLEVEL; }
     if (nelements < 6) { values[5] = DEFAULT_SHUFFLE; }
     if (nelements < 7) { values[6] = DEFAULT_COMPCODE; }
@@ -302,7 +302,7 @@ size_t blosc2_filter_function(unsigned flags, size_t cd_nelmts,
   if (cd_nelmts >= 8) {
     /* Get chunk shape for B2ND */
     ndim = cd_values[7];
-    if (ndim < 2) {
+    if (ndim < 1) {
       PUSH_ERR("blosc2_filter", H5E_CALLBACK,
                "Chunk rank %d (filter value) is too small for B2ND",
                ndim);
@@ -369,7 +369,7 @@ size_t blosc2_filter_function(unsigned flags, size_t cd_nelmts,
 
     blosc2_storage storage = {.cparams=&cparams, .contiguous=false};
 
-    if (ndim > 1 && nbytes != chunksize) {
+    if (ndim >= 1 && nbytes != chunksize) {
       BLOSC_TRACE_INFO("Filter input size %lu does not match chunk data size %lu "
                        "(e.g. Fletcher32 checksum added before compression step), "
                        "using plain Blosc2 instead of B2ND",
@@ -377,7 +377,7 @@ size_t blosc2_filter_function(unsigned flags, size_t cd_nelmts,
       ndim = -1;
     }
 
-    if (ndim > 1) {
+    if (ndim >= 1) {
 
       b2nd_context_t *ctx = NULL;
       b2nd_array_t *array = NULL;
