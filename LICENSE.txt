@@ -1,6 +1,7 @@
 Blosc2 for HDF5 - An HDF5 filter that uses the Blosc2 compressor.
 
-Copyright (C) 2009-2015 Francesc Alted <francesc@blosc.org>
+Copyright (c) 2009-2018 Francesc Alted <francesc@blosc.org>
+Copyright (c) 2019-present Blosc Development Team <blosc@blosc.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
