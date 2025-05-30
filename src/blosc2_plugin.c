@@ -1,9 +1,6 @@
 /*
  * Dynamically loaded filter plugin for HDF5 blosc2 filter.
  *
- * Author: Kiyoshi Masui <kiyo@physics.ubc.ca>
- * Created: 2014
- *
  * For compiling, use:
  * $ h5cc -fPIC -shared blosc2_plugin.c blosc2_filter.c -o libH5Zblosc2.so -lblosc2
  *

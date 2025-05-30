@@ -1,10 +1,6 @@
 /*
  * Dynamically loaded filter plugin for HDF5 blosc2 filter.
  *
- * Author: Kiyoshi Masui <kiyo@physics.ubc.ca>
- * Created: 2014
- *
- *
  * Header file
  * -----------
  *
