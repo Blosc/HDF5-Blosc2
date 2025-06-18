@@ -8,7 +8,7 @@ extern "C" {
 #include "blosc2.h"
 
 /* Filter revision number, starting at 1 */
-#define FILTER_BLOSC2_VERSION 2
+#define FILTER_BLOSC2_VERSION 1
 
 /* Filter ID registered with the HDF Group */
 /* See https://portal.hdfgroup.org/display/support/Filters */

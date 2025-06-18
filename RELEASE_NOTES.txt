@@ -14,10 +14,6 @@ Changes from 1.0.0 to 2.0.0
   standard one used since PyTables 3.10.0, and the same as the one
   included in the hdf5plugin package.
 
-- Add dim info when ndim == 1; useful for distinguishing 1d arrays
-  (those can be handled by the b2nd layer) from plain buffers (handled
-  as a regular super-chunk).
-
 
 Changes from 0.0.1 to 1.0.0
 ===========================
